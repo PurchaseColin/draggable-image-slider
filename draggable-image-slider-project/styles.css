@@ -1,0 +1,118 @@
+/* images are replacement elements - the representstion of the elements are outside the scope of css 
+These elements have properties which allow you to move the element within its tag
+object fit: none 
+object-position: l t
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 35px;
+  background-color: rgba(240, 97, 5, 1);
+}
+
+.wrapper {
+  max-width: 1200px;
+  position: relative;
+}
+
+.wrapper i {
+  top: 50%;
+  height: 46px;
+  width: 46px;
+  position: absolute;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 46px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.wrapper i:first-child {
+  left: -23px;
+  display: none;
+}
+
+.wrapper i:last-child {
+  right: -23px;
+}
+
+.wrapper .carousel {
+  font-size: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  cursor: pointer;
+}
+
+.carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging img {
+  pointer-events: none;
+}
+
+.carousel img {
+  height: 340px;
+  object-fit: cover;
+  margin-left: 14px;
+  width: calc(100% / 3);
+}
+
+.carousel img:first-child {
+  margin-left: 0px;
+}
+
+#lateral_anatomy {
+  object-position: -220px 0;
+}
+
+#big_head {
+  object-position: -240px 0;
+}
+
+#strange_face {
+  object-fit: cover;
+  object-position: 0px -30px;
+}
+
+#engineer {
+  object-position: -103px 0;
+}
+
+#bow {
+  object-fit: fill;
+}
+#skull {
+  object-position: 0 -8px;
+}
+#redman {
+  object-position: 0 -10px;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel img {
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carousel img {
+    width: 100%;
+  }
+}
